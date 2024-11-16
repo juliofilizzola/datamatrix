@@ -1,0 +1,11 @@
+{
+  "name": "datamatrix_generate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "python-shell": "^5.0.0",
+    "typescript": "^5.6.3"
+  }
+}
