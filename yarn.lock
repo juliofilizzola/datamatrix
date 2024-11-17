@@ -9,6 +9,11 @@
   dependencies:
     undici-types "~6.19.8"
 
+datamatrix_generate@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/datamatrix_generate/-/datamatrix_generate-0.0.1.tgz#d5d155d94cb552ec2faa711c356b674843e75e1a"
+  integrity sha512-b3gay/mQIzFb+cnfIS8AmNw9GgArvHVg1CH5kuYja3LFBzLW0nYhBvYWFjUvPBg2L5gKMFTvg32Tikdb1sPfiA==
+
 python-shell@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/python-shell/-/python-shell-5.0.0.tgz#26fc9a0e477cb30fc98ef2d9d5f53ab38a060eac"
