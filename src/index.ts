@@ -7,7 +7,7 @@ const requirementsPath = path.join(libDir, "requirements.txt");
 
 const installDependencies = async () => {
   try {
-    execSync(`pip install -r ${requirementsPath}`, { stdio: "inherit" });
+    execSync(`pip install -r ${requirementsPath}`, { stdio: "ignore" });
   } catch(err) {
     console.error(err)
   }
@@ -16,10 +16,22 @@ const installDependencies = async () => {
 const main = async () => {
   await installDependencies();
   try {
-    return PythonShell.run('lib/service/QrCode.py', {
-      args: ['https://www.google.com'],
-      pythonPath: 'python3',
-    })
+    const test = new PythonShell(
+      `${libDir}/node.py`,
+      {
+        mode: 'text',
+        pythonOptions: ['-u'],
+        pythonPath: 'python',
+      }
+    );
+    test.send({ message: 'hello' });
+    test.end((err, code, signal) => {
+      if (err) console.error(err);
+      console.log('The exit code was: ' + code);
+      console.log('The exit signal was: ' + signal);
+      console.log('finished');
+    });
+    return test
   } catch(err) {
     console.error(err)
   }
